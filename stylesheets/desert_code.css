@@ -53,7 +53,7 @@ li.L1,li.L3,li.L5,li.L7,li.L9 { }
 #menuIndex li.h1{font-size:14px;font-weight:normal;padding-left:0;margin-bottom:10px;}
 #menuIndex li.h3{padding-left:25px;}
 
-article ul,
-article ol{
+article .bd .entry-content ul,
+article .bd .entry-content ol{
     margin-left: 35px
 }
