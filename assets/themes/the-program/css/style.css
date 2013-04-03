@@ -719,12 +719,14 @@ pre {
   margin-left: 0;
   margin-right: 0;
 }
+/**
 .unit-article p code,
 .unit-article li code {
   padding: 2px 5px;
   white-space: nowrap;
   background-color: #fff04a;
 }
+**/
 .unit-article img {
   display: block;
   margin-left: auto;
@@ -990,7 +992,6 @@ pre {
 }
 /*
 	Not that old computer layout 
-*/
 @media only screen and (min-width: 1280px) {
   .the-header .unit-head .nav-global .logo {
     border-bottom: 0 none;
@@ -1023,9 +1024,9 @@ pre {
     width: 420px;
   }
 }
+*/
 /*
 	Huge-screen layout 
-*/
 @media only screen and (min-width: 1410px) {
   .the-header {
     float: left;
@@ -1094,6 +1095,7 @@ pre {
     margin-bottom: 26px;
   }
 }
+*/
 pre .c {
   color: #999999;
   font-style: italic;
