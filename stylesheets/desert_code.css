@@ -32,3 +32,28 @@ li.L1,li.L3,li.L5,li.L7,li.L9 { }
   pre .atn, code .atn { color: #404 }
   pre .atv, code .atv { color: #060 }
 }
+
+/**************目录导航**************/
+#menuIndex {position:fixed;top:60px;right:20px;width:200px;overflow:auto}
+#menuIndex a {
+    display:block;
+    color: #4A75B5;
+    text-decoration: none;
+    outline: none;
+}
+#menuIndex a:hover {text-decoration:none;}
+#menuIndex ul li{
+    list-style:none;    
+    font-size:14px;
+    padding-left:10px;
+    line-height:2em;
+    margin:5px 0 5px 0;
+}
+#menuIndex ul li.on{background-color:#eee}
+#menuIndex li.h1{font-size:14px;font-weight:normal;padding-left:0;margin-bottom:10px;}
+#menuIndex li.h3{padding-left:25px;}
+
+article ul,
+article ol{
+    margin-left: 35px
+}

@@ -1,11 +1,20 @@
 $(document).ready(function(){
 
     $('pre').addClass('prettyprint') //添加Google code Hight需要的class
+    prettyPrint();
 
 
     var menuIndex = function(){
+            var h2 = [],h3 = [],tmpl = '<ul>',h2index = 0;
 
-            $.each($('h2,h3',$('#content')),function(index,item){
+            if(window.innerWidth < 1000){
+                return;
+            }
+
+            $("article").width(window.innerWidth - 250);
+
+
+            $.each($('h2,h3',$('article')),function(index,item){
                 if(item.tagName.toLowerCase() == 'h2'){
                     var h2item = {};
                     h2item.name = $(item).text();
@@ -24,11 +33,9 @@ $(document).ready(function(){
                 item.id = 'menuIndex' + index
             });
 
-            //添加h1
-            tmpl += '<li class="h1"><a href="#" data-top="0">'+$('h1').text()+'</a></li>';
 
             for(var i=0;i<h2.length;i++){
-                tmpl += '<li><a href="#" data-id="'+h2[i].id+'">'+h2[i].name+'</a></li>';
+                tmpl += '<li class="h2"><a href="#" data-id="'+h2[i].id+'">'+h2[i].name+'</a></li>';
                 if(h3[i]){
                     for(var j=0;j<h3[i].length;j++){
                         tmpl += '<li class="h3"><a href="#" data-id="'+h3[i][j].id+'">'+h3[i][j].name+'</a></li>';
