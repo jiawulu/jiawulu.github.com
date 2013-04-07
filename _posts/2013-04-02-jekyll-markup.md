@@ -5,6 +5,7 @@ description: ""
 category: "study"
 tags: ["intro","beginner","jekyll"]
 ---
+{% include JB/setup %}
 
 ##安装
 
