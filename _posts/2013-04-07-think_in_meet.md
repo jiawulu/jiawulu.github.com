@@ -3,7 +3,7 @@ layout: post
 title: "think_in_meet"
 description: ""
 category: "life"
-tags: ["life","成长","思考"]
+tags: [life]
 ---
 {% include JB/setup %}
 
