@@ -3,8 +3,6 @@ $(document).ready(function(){
     (function($){
         if(window.innerWidth < 1000){ return;}
 
-        $("article").width(window.innerWidth - 250);
-
         var h2 = [],h3 = [],tmpl = '<ul>',h2index = 0;
         $.each($('h2,h3',$('article')),function(index,item){
             if(item.tagName.toLowerCase() == 'h2'){
@@ -26,6 +24,8 @@ $(document).ready(function(){
         });
 
         if(h2.length < 4 && h3.length < 4){return;}
+
+        $("article").width(window.innerWidth - 250);
 
         for(var i=0;i<h2.length;i++){
             tmpl += '<li class="h2"><a href="#" data-id="'+h2[i].id+'">'+h2[i].name+'</a></li>';
