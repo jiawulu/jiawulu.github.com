@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "chrome_profiles"
-description: "how to profile html5 app"
-category: "javascript"
-tags: ["javascript","chrome","profile"]
+description: ""
+category: "webapp"
+tags: ["javascript","webapp","chrome","profile"]
 ---
 
 {% include JB/setup %}
