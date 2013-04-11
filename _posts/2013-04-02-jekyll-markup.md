@@ -3,7 +3,7 @@ layout: post
 title: "jekyll入门"
 description: ""
 category: "study"
-tags: ["intro","beginner","jekyll"]
+tags: [intro,beginner,jekyll]
 ---
 {% include JB/setup %}
 
@@ -11,6 +11,11 @@ tags: ["intro","beginner","jekyll"]
 
 > gem remove http://rubygem
 > gem 
+
+## attention
+
+    category: "study"   这里可以有`""` 
+    tags: [intro,beginner,jekyll]   不能加 `""`
 
 ## markdown
 
