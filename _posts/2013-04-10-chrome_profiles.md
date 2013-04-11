@@ -3,7 +3,7 @@ layout: post
 title: "chrome_profiles"
 description: ""
 category: "webapp"
-tags: ["javascript","webapp","chrome","profile"]
+tags: [javascript,webapp,chrome,profile]
 ---
 {% include JB/setup %}
 
