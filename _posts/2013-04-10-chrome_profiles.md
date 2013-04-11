@@ -5,7 +5,6 @@ description: ""
 category: "webapp"
 tags: ["javascript","webapp","chrome","profile"]
 ---
-
 {% include JB/setup %}
 
 最近主要做了webapp的适配以及客户端的融合，虽然功能大体上都完成了，但是对于性能这块一直都还没有做，并且内存溢出有可能导致客户端的崩溃，所以做些webapp内存方面的检查还是有些必要的。
