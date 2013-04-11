@@ -729,8 +729,10 @@ pre {
 **/
 .unit-article img {
   display: block;
-  margin-left: auto;
-  margin-left: auto;
+  /*
+   *margin-left: auto;
+   *margin-left: auto;
+   */
 }
 .unit-article img.left {
   margin-right: 16px;
