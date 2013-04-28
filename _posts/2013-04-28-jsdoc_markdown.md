@@ -116,14 +116,14 @@ tags: [javascript,jsdoc,markdown]
     /** @lends History.prototype */{
         _originalHistory: window.history,
         defaultHash: "#index",
-        defaultSeparator: "-",
+        defaultSeparator: "",
         /**
          * 通用的返回方法，具有层级关系
          */
         back: function () {
 
 
-1. @lends 表示下边 block （{}） 中对应的方法或者属性属于 History
+1. `@lends` 表示下边 block  中对应的方法或者属性属于 History
 2. 方法上的注释只要普通的注释就可以，这样就能明确好 class 和 function 的结构了
 
 
