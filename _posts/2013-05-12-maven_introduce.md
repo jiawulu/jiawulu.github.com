@@ -136,6 +136,8 @@ maven 有些时候显得比较茫然，需要我们的帮助
     1. 理清依赖顺序，提高代码质量
     2. 有利于形成公有库，被其他工程复用
 
+![](http://yunpan.alibaba-inc.com/share/json/GetPhotoTag.do?info=H33jHHGNo&pInfo=A3YjLHQv&showBig=true&app_name=)
+
 ### 发布二方库
 既然形成了公有库，就必须把它发布到maven服务器上，这样其他同事才可以拿到。那么maven是如何实现它的呢？
 这就是maven服务器的作用了。
@@ -166,6 +168,10 @@ maven 有些时候显得比较茫然，需要我们的帮助
 
 ### 了解生命周期
 maven 定义了一整套的从构建到发布的完整生命周期。 正是基于这套完整的，可扩展的生命周期，我们可以在任意的阶段插入自定义的任务
+![](http://yunpan.alibaba-inc.com/share/json/GetPhotoTag.do?info=K33jHHGdN&pInfo=A3YjLHQv&showBig=true&app_name=)
+
+####例子
+![](http://yunpan.alibaba-inc.com/share/json/GetPhotoTag.do?info=M33jHH8vr&pInfo=A3YjLHQv&showBig=true&app_name=)
 
 ### AutoConfig 
 #### 为什么要重复造轮子
