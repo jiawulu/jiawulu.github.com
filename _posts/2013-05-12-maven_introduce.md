@@ -27,15 +27,15 @@ tags: [maven,课程]
 
 虽然这样我们也能顺利完成工作，但是也存在以下的几点问题：
 
-1. 工程结构和ide相关，我们有可能使用不同的ide（eclipse,idea,netbeans等），所以可能存在一些合作上的问题
-2. 依赖太难维护，需人工的去下载依赖并和源码一起传播
-3. 生产环境下不能直接通过源码进行测试打包
+    1. 工程结构和ide相关，我们有可能使用不同的ide（eclipse,idea,netbeans等），所以可能存在一些合作上的问题
+    2. 依赖太难维护，需人工的去下载依赖并和源码一起传播
+    3. 生产环境下不能直接通过源码进行测试打包
 
 ***maven***的快速流行就是因为它很好的解决了以上问题：
 
-1. maven 提供了标准的项目结构，规范及生命周期
-2. 强大的依赖体系方便我们快速的找到依赖及间接依赖
-3. 强大的插件体系可以完成项目的优化和定制
+    1. maven 提供了标准的项目结构，规范及生命周期
+    2. 强大的依赖体系方便我们快速的找到依赖及间接依赖
+    3. 强大的插件体系可以完成项目的优化和定制
 
 ## maven的简单使用
 
@@ -46,15 +46,15 @@ maven是一套完整的解决方案，它包含 maven 服务器 Nexus ， maven 
 
 ### 创建工程
 创建maven 工程的方式有多种：
-1. 通过ide生成
-2. 通过命令行: mvn　archetype:create　-DarchetypeArtifactId=maven-archetype-webapp
-3. 手工生成，创建文件夹及修改pom文件
+    1. 通过ide生成
+    2. 通过命令行: mvn　archetype:create　-DarchetypeArtifactId=maven-archetype-webapp
+    3. 手工生成，创建文件夹及修改pom文件
 
 以上3种方式都一样，对于我们来说有有最重要的4个概念：
-1. groupId
-2. artifactId 
-3. version
-4. package
+    1. groupId
+    2. artifactId 
+    3. version
+    4. package
 
 ![](http://yunpan.alibaba-inc.com/share/json/GetPhotoTag.do?info=333jHH8w0&pInfo=A3YjLHQv&showBig=true&app_name=)
 
@@ -92,11 +92,9 @@ maven是一套完整的解决方案，它包含 maven 服务器 Nexus ， maven 
 #### 依赖范围
 现实世界中的依赖作用各不一样，比如：
 
-1. junit 等单元测试类库理想情况下仅仅在测试环节有效，对于main 或者 打包后不应该有关联
-
-2. servlet api等应该只在编译的时候起作用，因为web服务器肯定会内置servlet api，打包进去也加载不了
-
-3. spring 我们希望在编译，测试，打包中都必须存在
+    1. junit 等单元测试类库理想情况下仅仅在测试环节有效，对于main 或者 打包后不应该有关联
+    2. servlet api等应该只在编译的时候起作用，因为web服务器肯定会内置servlet api，打包进去也加载不了
+    3. spring 我们希望在编译，测试，打包中都必须存在
 
 所以为了满足我们这个需求，它提供了 编译，测试，provided ， runtime 4种scope，理解和使用这些scope是用好maven的关键之一
 
@@ -121,9 +119,8 @@ maven 有些时候显得比较茫然，需要我们的帮助
 
 关于依赖仲裁有2个原则：
 
-1. 间接依赖重复了必须要仲裁
-
-2. 没有重复的间接依赖最好不要仲裁
+    1. 间接依赖重复了必须要仲裁
+    2. 没有重复的间接依赖最好不要仲裁
 
 ![](http://yunpan.alibaba-inc.com/share/json/GetPhotoTag.do?info=N33jHH8vq&pInfo=A3YjLHQv&showBig=true&app_name=)
 
@@ -136,9 +133,8 @@ maven 有些时候显得比较茫然，需要我们的帮助
 当系统发展到一定程度时候，业务代码比较多的时候，为了更加清晰合理的组织代码，我们一般把工程分成 dao,biz,web 3层， 通过拆分我们得到
 的好处是：
 
-1. 理清依赖顺序，提高代码质量
-
-2. 有利于形成公有库，被其他工程复用
+    1. 理清依赖顺序，提高代码质量
+    2. 有利于形成公有库，被其他工程复用
 
 ### 发布二方库
 既然形成了公有库，就必须把它发布到maven服务器上，这样其他同事才可以拿到。那么maven是如何实现它的呢？
@@ -156,17 +152,12 @@ maven 有些时候显得比较茫然，需要我们的帮助
 
 我的建议如下：
 
-1. 好好考虑下库的粒度，不要因为对方只用了你的一个工具类而依赖了你整个biz层
-
-2. 有效的控制间接依赖，手工排除并不是一件轻松的事，可以考虑使用 option 来去除间接依赖
-
-3. 对于私有依赖需要传递下去，可以保证升级的顺利
-
-4. 测试，beta阶段尽量使用snapshot来保证代码的更新
-
-5. 稳定版本坚持使用release 保证稳定度
-
-6. 合理的使用parent，如果部署的时候不带上parent的话，这个依赖库也使用不了
+    1. 好好考虑下库的粒度，不要因为对方只用了你的一个工具类而依赖了你整个biz层
+    2. 有效的控制间接依赖，手工排除并不是一件轻松的事，可以考虑使用 option 来去除间接依赖
+    3. 对于私有依赖需要传递下去，可以保证升级的顺利
+    4. 测试，beta阶段尽量使用snapshot来保证代码的更新
+    5. 稳定版本坚持使用release 保证稳定度
+    6. 合理的使用parent，如果部署的时候不带上parent的话，这个依赖库也使用不了
 
 ## 插件
 插件是maven的核心，maven 本身不具备任何功能，它只是提供了插件运行的平台， 而具体的实现都是靠一个个的插件完成的。
@@ -178,19 +169,16 @@ maven 定义了一整套的从构建到发布的完整生命周期。 正是基�
 
 ### AutoConfig 
 #### 为什么要重复造轮子
-1. 可以直接改变目标文件中的 placeholders 值
-2. 在替换的过程中及时的验证，提前发现错误
-3. 支持嵌套替换，满足复杂条件
-4. 统一化的配置管理中心，方便查询，审核
+    1. 可以直接改变目标文件中的 placeholders 值
+    2. 在替换的过程中及时的验证，提前发现错误
+    3. 支持嵌套替换，满足复杂条件
+    4. 统一化的配置管理中心，方便查询，审核
 
 #### 简单使用
-1. 给工程加上autoconfig 插件
-
-3. 建立 auto-config.xml
-
-4. 建立模板文件
-
-2. 申请应用配置项
+    1. 给工程加上autoconfig 插件
+    3. 建立 auto-config.xml
+    4. 建立模板文件
+    2. 申请应用配置项
 
 ![](http://yunpan.alibaba-inc.com/share/json/GetPhotoTag.do?info=U33jHH8vz&pInfo=A3YjLHQv&showBig=true&app_name=)
 
