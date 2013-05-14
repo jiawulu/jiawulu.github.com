@@ -56,6 +56,11 @@ maven是一套完整的解决方案，它包含 maven 服务器 Nexus ， maven 
 3. version
 4. package
 
+![](http://yunpan.alibaba-inc.com/share/json/GetPhotoTag.do?info=333jHH8w0&pInfo=A3YjLHQv&showBig=true&app_name=)
+
+    pom.xml
+![](http://yunpan.alibaba-inc.com/share/json/GetPhotoTag.do?info=733jHH8w4&pInfo=A3YjLHQv&showBig=true&app_name=)
+
 ### 编写源码
 工程创建好了之后我们就可以开始协同开发了，那我们在把源码放在哪里呢？ 
 
@@ -65,6 +70,12 @@ maven是一套完整的解决方案，它包含 maven 服务器 Nexus ， maven 
 
 另外我们还需要关注源码的 encoding 和 java 编译的版本
 
+![](http://yunpan.alibaba-inc.com/share/json/GetPhotoTag.do?info=P33jHH8vw&pInfo=A3YjLHQv&showBig=true&app_name=)
+
+当然文件源码路径也可以重载默认的配置
+
+![](http://yunpan.alibaba-inc.com/share/json/GetPhotoTag.do?info=833jHH8wB&pInfo=A3YjLHQv&showBig=true&app_name=)
+
 ### 增加依赖
 接下来我们为简单的详情系统增加spring和ibatis的依赖
 
@@ -72,13 +83,24 @@ maven是一套完整的解决方案，它包含 maven 服务器 Nexus ， maven 
 怎样在maven庞大的仓库中找到对应的依赖呢？
 通过groupid : artifactid : version 3个要素我们可以在maven 系统中定位到对应的依赖，这个也就是我们通常所说的坐标
 
+![](http://yunpan.alibaba-inc.com/share/json/GetPhotoTag.do?info=G33jHH8vp&pInfo=A3YjLHQv&showBig=true&app_name=)
+
+首先看一下完整的依赖树
+
+![](http://yunpan.alibaba-inc.com/share/json/GetPhotoTag.do?info=633jHH8w5&pInfo=A3YjLHQv&showBig=true&app_name=)
+
 #### 依赖范围
 现实世界中的依赖作用各不一样，比如：
+
 1. junit 等单元测试类库理想情况下仅仅在测试环节有效，对于main 或者 打包后不应该有关联
+
 2. servlet api等应该只在编译的时候起作用，因为web服务器肯定会内置servlet api，打包进去也加载不了
+
 3. spring 我们希望在编译，测试，打包中都必须存在
 
 所以为了满足我们这个需求，它提供了 编译，测试，provided ， runtime 4种scope，理解和使用这些scope是用好maven的关键之一
+
+![](http://yunpan.alibaba-inc.com/share/json/GetPhotoTag.do?info=533jHH8w6&pInfo=A3YjLHQv&showBig=true&app_name=)
 
 #### 依赖排除
 依赖的间接依赖性可以很方便的解决好一系列的依赖性问题，但同时这也是把双刃剑。因为你不知道你的直接依赖会给你引入多少的其他依赖，
@@ -88,8 +110,7 @@ maven是一套完整的解决方案，它包含 maven 服务器 Nexus ， maven 
 
 maven提供了dependency：tree 方便我们清楚的知道整个依赖的结构，通过分析我们可以做相关的优化。 那最常见的就是依赖的排除了
 
-//TODO
-
+![](http://yunpan.alibaba-inc.com/share/json/GetPhotoTag.do?info=O33jHH8vx&pInfo=A3YjLHQv&showBig=true&app_name=)
 
 #### 依赖仲裁
 maven 有些时候显得比较茫然，需要我们的帮助
@@ -99,8 +120,13 @@ maven 有些时候显得比较茫然，需要我们的帮助
 解决这个方式的思路很简单就是明确支持这个工程中 C 的具体版本。
 
 关于依赖仲裁有2个原则：
+
 1. 间接依赖重复了必须要仲裁
+
 2. 没有重复的间接依赖最好不要仲裁
+
+![](http://yunpan.alibaba-inc.com/share/json/GetPhotoTag.do?info=N33jHH8vq&pInfo=A3YjLHQv&showBig=true&app_name=)
+
 
 ## maven进阶（模块化）
 我们在追求代码的质量同时也在向模块化靠近。 为了不使用重复代码我们可以提取成公共方法，同样的道理为了跨工程共享这些方法我们可做的就
@@ -109,7 +135,9 @@ maven 有些时候显得比较茫然，需要我们的帮助
 ### 为什么要拆分
 当系统发展到一定程度时候，业务代码比较多的时候，为了更加清晰合理的组织代码，我们一般把工程分成 dao,biz,web 3层， 通过拆分我们得到
 的好处是：
+
 1. 理清依赖顺序，提高代码质量
+
 2. 有利于形成公有库，被其他工程复用
 
 ### 发布二方库
@@ -127,11 +155,17 @@ maven 有些时候显得比较茫然，需要我们的帮助
 对于发布出去的二方库，既然是给其他人用的,那么保证其质量是十分必要的。
 
 我的建议如下：
+
 1. 好好考虑下库的粒度，不要因为对方只用了你的一个工具类而依赖了你整个biz层
+
 2. 有效的控制间接依赖，手工排除并不是一件轻松的事，可以考虑使用 option 来去除间接依赖
+
 3. 对于私有依赖需要传递下去，可以保证升级的顺利
+
 4. 测试，beta阶段尽量使用snapshot来保证代码的更新
+
 5. 稳定版本坚持使用release 保证稳定度
+
 6. 合理的使用parent，如果部署的时候不带上parent的话，这个依赖库也使用不了
 
 ## 插件
@@ -158,5 +192,5 @@ maven 定义了一整套的从构建到发布的完整生命周期。 正是基�
 
 2. 申请应用配置项
 
-
+![](http://yunpan.alibaba-inc.com/share/json/GetPhotoTag.do?info=U33jHH8vz&pInfo=A3YjLHQv&showBig=true&app_name=)
 
