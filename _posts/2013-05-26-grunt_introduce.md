@@ -35,19 +35,24 @@ less 对应的是插件less的名称，dev 标示的是一个group，这个应�
 
 ### 装载插件
 仅仅加上配置是不够的，我们还必须给插件挂上
+
     grunt.loadNpmTasks('grunt-contrib-less');
+
 这样在grunt执行的时候就能把less插件加载起来，保证可以对上面的配置进行解析，接下来我们再了解下插件怎么安装的
 
 ### 插件安装
 一般来说我们对应的工程都会有一个package.json , 这里负责写一些开发者信息，版本及依赖配置，类似于maven的pom文件。所以首先我们需要在package.json中加入依赖的插件
+
     "devDependencies": {
         "grunt": "0.4.x",
         "grunt-contrib-less" : "~0.5.1",
     },
+
 这样插件的信息配置好了，less需要大于 0.5.1 的版本，接下来我们就在package.json对应的目录下执行 ``npm install`` 就能把具体的依赖（插件）安装到本地了，具体路径在对应目录的 ``node_modules``目录下，grunt （nodejs） 也就会在该目录下找到依赖
 
 ### 注册任务
 其实通过上边的步骤我们已经可以通过grunt执行less任务了，但是需要执行 ``grunt less``, 这只是一个插件，如果我们希望一个命令能执行多个插件的话那就需要用如下方式了：
+
     grunt.registerTask("default", [ "atc","concat:base","concat:detail","concat:desc","concat:rate", "less:dev"]);
 
 这样以后我们直接在目录下执行grunt就可以执行多个任务了
