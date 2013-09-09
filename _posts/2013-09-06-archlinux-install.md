@@ -71,14 +71,14 @@ tags: [archlinux,linux]
     ttf-ubuntu-font-family
 
     /usr/share/font/
-    mkfontdir
-    mkfontscale
-    fc-cache -fv
+    $ mkfontdir
+    $ mkfontscale
+    $ fc-cache -fv
 
 ## 输入法
 
-    yaourt fcitx-cloudpinyin
-    yaourt kcm-fcitx
+    $ yaourt fcitx-cloudpinyin
+    $ yaourt kcm-fcitx
     
 
 ## 小工具
@@ -88,10 +88,10 @@ tags: [archlinux,linux]
 
 ## theme
 
-    yaourt kfaen
-    sudo pacman -S faience-icon-theme
-    yaourt caledonia
-    yaourt chromi-kde4decor-git
+    $ yaourt kfaen
+    $ sudo pacman -S faience-icon-theme
+    $ yaourt caledonia
+    $ yaourt chromi-kde4decor-git
 
 ## pacman
 
