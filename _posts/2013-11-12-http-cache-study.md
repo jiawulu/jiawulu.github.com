@@ -63,25 +63,32 @@ tags: [webapp,http,cache]
 
 ## 测试结果分析
 
-1. 我们通过正常进入的方式2次访问页面的时候，一切都很正常，因为这些资源都还未过期，因此结果都是from cache
+### enter
+ 
+ 我们通过正常进入的方式2次访问页面的时候，一切都很正常，因为这些资源都还未过期，因此结果都是from cache
 
 ![](http://yunpan.alibaba-inc.com/share/json/GetPhotoTag.do?info=638jLHCKb&pInfo=A3YjLHQv&zoomSize=1000&app_name=)
 
-2. 如果我们刷新进入的话，情况就出现了差异化
+### refresh
+
+如果我们刷新进入的话，情况就出现了差异化
 
 ![](http://yunpan.alibaba-inc.com/share/json/GetPhotoTag.do?info=H38jLHRZI&pInfo=A3YjLHQv&zoomSize=1000&app_name=)
 
 由于expires.js 服务端都没有实现304的功能，所以尽管带上了 `If-Modified-Since` 头，服务端返回的都是200， 我们注意到expire.js (在页面load之后加载的，可以)是from cache的，其余的所有资源都进入了第2个阶段，带着 If-Modified-Since 请求服务器。
 
-3. 强制刷新的，又是这般景象
+### force refresh
+
+强制刷新的，又是这般景象
 
 ![](http://yunpan.alibaba-inc.com/share/json/GetPhotoTag.do?info=K38jLHBgN&pInfo=A3YjLHQv&zoomSize=1000&app_name=)
 
 一般的资源都很正常的遵循规律，只有在page load之后加载的资源会从最低层http cache走起。
 
-## 总结
+### 总结
 
-http cache在通常情况下是按照规律来的，会根据不同的情况选择不同的策略。 当资源的加载时间位于page load之后，那么这些策略将不起作用；http cache将始终发挥它的作用！
+1. http cache在通常情况下是按照规律来的，会根据不同的情况选择不同的策略。 
+2. 当资源的加载时间位于page load之后，那么这些策略将不起作用；http cache将始终发挥它的作用！
 
 ## 启发
 
