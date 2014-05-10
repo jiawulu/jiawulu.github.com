@@ -11,38 +11,38 @@ tags: [git,shell,tools]
 
 ### alias
 
-        git config --global alias.co checkout
-        git config --global alias.ci commit
-        git config --global alias.br branch
-        git config --global alias.st status
+    git config --global alias.co checkout
+    git config --global alias.ci commit
+    git config --global alias.br branch
+    git config --global alias.st status
 
 
 ### 验证
 
-        ➜  ~  git config -l
-        alias.co=checkout
-        alias.ci=commit
-        alias.br=branch
-        alias.st=status
-        user.name=wuzhong
-        user.email=wuzhong@taobao.com
-        push.default=simple
-        core.autocrlf=input
-        core.excludesfile=~/.gitignore
+    ➜  ~  git config -l
+    alias.co=checkout
+    alias.ci=commit
+    alias.br=branch
+    alias.st=status
+    user.name=wuzhong
+    user.email=wuzhong@taobao.com
+    push.default=simple
+    core.autocrlf=input
+    core.excludesfile=~/.gitignore
 
 ### ~/.gitconfig
 
 ## ignore
 
-        git config --global core.excludesfile '~/.gitignore'
+    git config --global core.excludesfile '~/.gitignore'
 
 
 ### demo
 
-        ➜  ~  more .gitignore
-        *.iml
-        .idea
-        out
+    ➜  ~  more .gitignore
+    *.iml
+    .idea
+    out
 
 
 
