@@ -1,13 +1,15 @@
 ---
 layout: post
 title: "dns dig nslookup"
-description: "dns 工具的基础使用"
-category: "命令行"
-tags: [shell,linux,dns]
+description: "dns 's basic knowledge and usage"
+category: "tools"
+tags: [dnsi,dig]
 ---
 {% include JB/setup %}
 
 ## dig
+
+
 
 ### dig hostname
 
@@ -26,5 +28,4 @@ tags: [shell,linux,dns]
 
 ## 参考
 
-[dig理解DNS的解析过程
-](http://www.aslibra.com/blog/post/use_dig_dns_check.php)
+[dig理解DNS的解析过程](http://www.aslibra.com/blog/post/use_dig_dns_check.php)

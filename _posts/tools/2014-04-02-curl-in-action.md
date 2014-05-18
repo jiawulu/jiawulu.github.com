@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "curl in action"
-description: "curl 的基础使用"
-category: "命令行"
-tags: [shell,linux,curl]
+description: "curl basic use"
+category: "tools"
+tags: [curl]
 ---
 {% include JB/setup %}
 

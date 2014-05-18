@@ -2,8 +2,8 @@
 layout: post
 title: "linux_shell"
 description: "basic linux shell usage"
-category: "shell"
-tags: [linux,shell,tools]
+category: "tools"
+tags: [linux,shell]
 ---
 {% include JB/setup %}
 

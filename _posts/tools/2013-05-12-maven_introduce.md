@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "maven_introduce"
-description: ""
-category: "tec"
-tags: [maven,课程]
+description: "maven basic use"
+category: "tools"
+tags: [maven]
 ---
 {% include JB/setup %}
 

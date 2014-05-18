@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "grunt_introduce"
-description: "grunt的简单实用"
-category: "web"
-tags: [grunt,web,dev]
+description: "grunt basic use"
+category: "tools"
+tags: [grunt,h5]
 ---
 {% include JB/setup %}
 

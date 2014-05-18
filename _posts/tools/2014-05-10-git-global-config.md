@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "git global config"
-description: ""
+description: "my git config"
 category: "tools"
-tags: [git,shell,tools]
+tags: [git]
 ---
 {% include JB/setup %}
 
