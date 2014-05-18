@@ -2,8 +2,8 @@
 layout: post
 title: "使用jsdoc 和 markdown 来生成js 文档"
 description: ""
-category: "wiki"
-tags: [javascript,jsdoc,markdown]
+category: "tools"
+tags: [jsdoc,markdown]
 ---
 {% include JB/setup %}
 
