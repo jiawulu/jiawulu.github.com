@@ -2,8 +2,8 @@
 layout: post
 title: "jekyll入门"
 description: ""
-category: "study"
-tags: [intro,beginner,jekyll]
+category: "tools"
+tags: [jekyll]
 ---
 {% include JB/setup %}
 

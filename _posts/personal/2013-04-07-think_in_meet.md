@@ -2,8 +2,8 @@
 layout: post
 title: "think_in_meet"
 description: ""
-category: "life"
-tags: [life]
+category: "ability"
+tags: [ability]
 ---
 {% include JB/setup %}
 
