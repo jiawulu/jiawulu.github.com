@@ -24,11 +24,6 @@ a. AUTHORITY SECTION：授权信息
 a. ADDITIONAL SECTION：每个授权服务器的IP地址
 a. SERVER：查询的dns服务器，可能会被缓存
 
-过程大体是：
-1. 从SERVER查询www.aslibra.com，如果有有效缓存就返回了
-2. 如果没有，则找到aslibra.com的授权服务器，下面有例子介绍
-3. 从其中一个查询到结果(A记录)
-
 ### dig hostname
 
     ➜  ~  dig hws.m.taobao.com
