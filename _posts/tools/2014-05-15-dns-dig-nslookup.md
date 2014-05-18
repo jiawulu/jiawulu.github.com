@@ -65,7 +65,7 @@ a. SERVER：查询的dns服务器，可能会被缓存
     ;; Received 228 bytes from 127.0.0.1#53(127.0.0.1) in 533 ms
 
     com.            172800  IN  NS  j.gtld-servers.net.
-   ... 
+    ... 
     com.            172800  IN  NS  k.gtld-servers.net.
     ;; Received 494 bytes from 192.112.36.4#53(192.112.36.4) in 313 ms
 
@@ -109,23 +109,23 @@ a. SERVER：查询的dns服务器，可能会被缓存
 
 ## nslookup
 
-➜  ~  nslookup hws.m.taobao.com
-Server:     127.0.0.1
-Address:    127.0.0.1#53
+    ➜  ~  nslookup hws.m.taobao.com
+    Server:     127.0.0.1
+    Address:    127.0.0.1#53
 
-Non-authoritative answer:
-hws.m.taobao.com    canonical name = hws.m.split.taobao.com.
-Name:   hws.m.split.taobao.com
-Address: 42.120.182.45
+    Non-authoritative answer:
+    hws.m.taobao.com    canonical name = hws.m.split.taobao.com.
+    Name:   hws.m.split.taobao.com
+    Address: 42.120.182.45
 
 ## host
 
-➜  ~  host hws.m.taobao.com
-hws.m.taobao.com is an alias for hws.m.split.taobao.com.
-hws.m.split.taobao.com has address 42.120.182.45
+    ➜  ~  host hws.m.taobao.com
+    hws.m.taobao.com is an alias for hws.m.split.taobao.com.
+    hws.m.split.taobao.com has address 42.120.182.45
 
 
 ## 参考
 
-[dig理解DNS的解析过程](http://www.aslibra.com/blog/post/use_dig_dns_check.php)
-[鸟哥的dns介绍](http://linux.vbird.org/linux_server/0350dns.php)
+1. [dig理解DNS的解析过程](http://www.aslibra.com/blog/post/use_dig_dns_check.php)
+2. [鸟哥的dns介绍](http://linux.vbird.org/linux_server/0350dns.php)
