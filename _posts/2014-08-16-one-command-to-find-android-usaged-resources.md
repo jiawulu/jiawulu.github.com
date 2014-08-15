@@ -10,3 +10,8 @@ tags: [shell,android]
 ### 查找使用的layout
 
     find src* -iname "*.java" | xargs more | egrep -o "R.layout.[a-z1-9_.]*" | awk -F "\." '{print "res/layout/"$3".xml"}'
+
+### copy出来
+
+    name "*.java" | xargs more | egrep -o "R.layout.[a-z1-9_.]*" | awk -F "\." '{print "res/layout/"$3".xml"}'| uniq | xargs -I {} cp -rf {} layout
+
